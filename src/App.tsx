@@ -1,16 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
+import NotFound from './components/NotFound/NotFound';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+
+import './App.css';
+
+/**
+ * * App Function with the Routes Configuration
+ * @returns App Compnent with the Routing Configurations
+ */
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>SortAlgoViz</h1>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Route>
+        <Route path="*" element={<NotFound />}></Route>
+      </Routes>
     </>
-  )
+  );
 }
 
 export default App
