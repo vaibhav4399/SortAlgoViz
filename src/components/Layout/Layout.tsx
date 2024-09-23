@@ -26,10 +26,11 @@ const Layout = () => {
     const [isModal, setIsModal] = useState<boolean>(false);
     const [quantity, setQuantity] = useState<number>(20);
     const [range, setRange] = useState<number>(20);
+    const [dark, setDark] = useState<boolean>(false);
 
     //** Context Data to be passed to various components */
     
-    const contextData = {
+    const contextData: IDataContext = {
         algorithm,
         setAlgorithm,
         isModal,
@@ -37,7 +38,9 @@ const Layout = () => {
         range,
         setRange,
         quantity,
-        setQuantity
+        setQuantity,
+        dark,
+        setDark
     }
 
     return (

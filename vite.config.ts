@@ -1,5 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import svgr from 'vite-plugin-svgr';
+import compression from 'vite-plugin-compression';
+import { imagetools } from 'vite-imagetools';
 import type { UserConfig } from 'vite';
 import tailwindcss from 'tailwindcss'; 
 import autoprefixer from 'autoprefixer';
@@ -9,7 +12,10 @@ import cssnano from 'cssnano';
 
 const config: UserConfig = {
   plugins: [
-    react()
+    react(),
+    svgr(), 
+    compression({ algorithm: 'gzip' }), 
+    imagetools()
   ],
   css: {
     postcss: {
@@ -35,10 +41,18 @@ const config: UserConfig = {
     minify: 'terser', // Terser for better JS minification
     terserOptions: {
       compress: {
-        drop_console: true, // Remove console.logs in production
+        drop_console: true, // Remove console.logs
+        drop_debugger: true, // Remove debugger statements
+        ecma: 2020, // Modern JS features for minification
+        passes: 3, // Additional optimization passes
+        pure_funcs: ['console.info', 'console.debug'],
+      },
+      output: {
+        comments: false, // Remove comments for a cleaner bundle
       },
     },
   },
 };
 
 export default defineConfig(config);
+
