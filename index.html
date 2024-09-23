@@ -2,15 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SortAlgoViz</title>
+    <link rel="preload" href="/sav_short_black_logo.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="/sav_short_white_logo.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="/sav_long_black_logo.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="/sav_long_white_logo.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="/src/assets/images/starry_image.webp" as="image">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" as="style"
       onload="this.rel='stylesheet'">
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     </noscript>
-    <link rel="canonical" href="https://ricknmortyhub.empeiros.dev" />
+    <link rel="icon" type="image/svg+xml" href="/sav_short_black_logo.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="/sav_short_white_logo.svg" media="(prefers-color-scheme: dark)">
+    <link rel="canonical" href="https://sortalgoviz.empeiros.dev" />
+    
+    <title>SortAlgoViz</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="SortAlgoViz" />
     <meta name="description"
       content="SortAlgoViz is an interactive platform designed to visualize various sorting algorithms. Explore how algorithms like Quick Sort, Merge Sort, and Bubble Sort work through dynamic animations and intuitive explanations. Perfect for students, educators, and coding enthusiasts, SortAlgoViz helps you understand the efficiency and mechanics behind each algorithm. Start your journey to mastering sorting techniques and improve your coding skills today!">
@@ -31,5 +39,8 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script defer data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="empeiros" data-description="Support me on Buy me a coffee!" data-message="Coffee Please 🥺"
+      data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
  * * Type Defination for setState Function used in useState Hook
  */
 
-type setState<s> = React.Dispatch<React.SetStateAction<s>>;
+export type setState<s> = React.Dispatch<React.SetStateAction<s>>;
 
 /**
  * * Interface for the data context provider
@@ -17,7 +17,9 @@ interface IDataContext {
     quantity?: number,
     setQuantity?: setState<number>,
     range?: number,
-    setRange?: setState<number>
+    setRange?: setState<number>,
+    dark: boolean,
+    setDark: setState<boolean>
 }
 
 

@@ -2,7 +2,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default {
-  mode: 'jit',
   content: [
     "./src/**/*.{html,js,jsx,ts,tsx}",
     "./index.html"
@@ -19,7 +18,10 @@ export default {
       },
       colors: {
         bodyBackground: '#f8f8f8',
-        bodyBackgroundDark: '#282828'
+        bodyBackgroundDark: '#181818'
+      },
+      backgroundImage: {
+        'starry-button': "url('/src/assets/images/starry_image.webp')",
       },
       width: {
         w10: '10%',
