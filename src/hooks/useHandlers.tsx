@@ -16,3 +16,33 @@ export const handleResize = (setIsClicked: setState<boolean>, dark: boolean, set
         setLogo(dark ? 'sav_short_white_logo.svg' : 'sav_short_black_logo.svg');
     }
 }
+
+/**
+ * * Function to handle the range input
+ * @param e HTML input event
+ * @param setRange SetRange function of useState
+ */
+
+export const handleRange = (e: React.ChangeEvent<HTMLInputElement>, setRange: setState<number>) => {
+    setRange ? setRange(Number(e.target.value)) : false;
+}
+
+/**
+ * * Function to handle the quantity input
+ * @param e HTML input event
+ * @param setQuantity SetQuantity function of useState
+ */
+
+export const handleQuantity = (e: React.ChangeEvent<HTMLInputElement>, setQuantity:setState<number>) => {
+    setQuantity ? setQuantity(parseInt(e.target.value)) : false;
+}
+
+/**
+ * * Function to handle the slider thumb position
+ * @param range range input value
+ * @returns Percentage value of the slider position
+ */
+
+export const getSliderThumbPosition = (range: number): number => {
+    return 4 + ((range ?? 20 - 20) / (1000 - 20)) * 88; //** Expression for the effective range between 4 to 92 for considering padding issue */
+};

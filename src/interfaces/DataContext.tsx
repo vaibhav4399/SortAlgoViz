@@ -14,10 +14,10 @@ interface IDataContext {
     setAlgorithm: setState<string>,
     isModal: boolean,
     setIsModal: setState<boolean>,
-    quantity?: number,
-    setQuantity?: setState<number>,
-    range?: number,
-    setRange?: setState<number>,
+    quantity: number,
+    setQuantity: setState<number>,
+    range: number,
+    setRange: setState<number>,
     dark: boolean,
     setDark: setState<boolean>
 }
