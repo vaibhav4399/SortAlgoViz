@@ -1,0 +1,36 @@
+.home {
+    @apply mt-5;
+
+    .algorithminput {
+        @apply w-full h-fit dark:text-white;
+
+        .outer {
+            @apply flex flex-wrap justify-evenly items-center w-full px-4 h-full;
+
+            .misc-style {
+                @apply w-full md:w-w40 lg:w-w20  my-3 px-4 py-3 ;
+
+                .tooltip {
+                    @apply absolute transform -translate-x-1/2 px-2 py-1 bg-black text-white dark:bg-white dark:text-black text-sm rounded
+                }
+            }
+
+            .algorithm {
+                @apply rounded-full flex justify-center items-center border-2 text-2xl;
+            }
+
+            .range {
+                @apply w-full appearance-none rounded-full accent-blue-600 cursor-pointer bg-slate-500;
+            }
+
+            .quantity {
+                @apply mx-2 rounded-full border-black border-2 dark:text-black focus:outline-none;
+            }
+
+            button {
+                @apply mx-2 rounded-full bg-blue-400 font-semibold text-2xl;
+            }
+
+        }
+    }
+}
