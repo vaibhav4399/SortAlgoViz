@@ -1,6 +1,8 @@
 .home {
     @apply mt-5;
 
+    /** Styles for Input Component */
+
     .algorithminput {
         @apply w-full h-fit dark:text-white;
 
@@ -16,7 +18,7 @@
             }
 
             .algorithm {
-                @apply rounded-full flex justify-center items-center border-2 text-2xl;
+                @apply rounded-full flex justify-center items-center border-2 text-2xl cursor-pointer;
             }
 
             .range {
@@ -33,4 +35,36 @@
 
         }
     }
+
+
+
+    /** Styles for Modal Component */
+
+    .modal-bg {
+        @apply fixed inset-0 bg-black backdrop-blur-sm bg-opacity-20 z-20 justify-center items-center;
+
+        .modal-body {
+            @apply flex bg-white w-full sm:w-w70 h-4/6 rounded-2xl relative px-5;
+
+            .close-btn {
+                @apply absolute top-4 right-4 text-3xl;
+            }
+
+            .badge-section {
+                @apply w-full mt-16 flex flex-wrap self-baseline;
+
+                .badge-outer {
+                    @apply w-full xs:w-fit py-2 px-3 my-3 h-fit xs:mx-2 xs:h-[50px] flex justify-center items-center cursor-pointer rounded-full border-2 border-black hover:drop-shadow-2xl text-2xl;
+
+                    .badge-inner {
+                        @apply w-full xs:w-fit px-4  text-center rounded-full;
+                    }
+                }
+            }
+        }
+    }
+
+
+    /** Styles for visualizer Component */
+
 }

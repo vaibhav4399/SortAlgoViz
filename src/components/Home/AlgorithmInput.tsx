@@ -25,14 +25,14 @@ const AlgorithmInput = () => {
         );
     }
 
-    const {algorithm, range, setRange, quantity, setQuantity} = context
+    const {algorithm, range, setRange, quantity, setQuantity, setIsModal} = context
 
     const [isTooltip, setIsTooltip] = useState<boolean>(false);
 
     return (
         <div className='algorithminput'>
             <div className='outer'>
-                <div className='misc-style algorithm'>{algorithm}</div>
+                <div onClick={() => setIsModal(true)} className='misc-style algorithm'>{algorithm}</div>
                 <div className='relative misc-style'>
                     <motion.span
                         initial={{
@@ -47,7 +47,7 @@ const AlgorithmInput = () => {
                             delay: 0.05
                         }}
                         className='tooltip' 
-                        style={{ left: `${() => getSliderThumbPosition(range?? 20)}%`, top: "-20px" }} >
+                        style={{ left: `${getSliderThumbPosition(range)}%`, top: "-20px" }} >
                         {range}
                     </motion.span>
                     <motion.input

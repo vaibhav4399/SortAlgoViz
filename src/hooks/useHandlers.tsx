@@ -46,3 +46,15 @@ export const handleQuantity = (e: React.ChangeEvent<HTMLInputElement>, setQuanti
 export const getSliderThumbPosition = (range: number): number => {
     return 4 + ((range ?? 20 - 20) / (1000 - 20)) * 88; //** Expression for the effective range between 4 to 92 for considering padding issue */
 };
+
+/**
+ * * Function to handle the Change in the Algorithm Value
+ * @param algo Algorithm name passed as a string
+ * @param setAlgorithm Function to set the algorithm variable
+ * @param setIsModal Function to set the modal variable
+ */
+
+export const handleAlgorithm = (algo: string, setAlgorithm:setState<string> , setIsModal: setState<boolean>) => {
+    setAlgorithm(algo);
+    setIsModal(false);
+}

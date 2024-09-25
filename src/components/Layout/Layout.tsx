@@ -22,7 +22,7 @@ export const dataContext = createContext<IDataContext | null>(null)
 
 const Layout = () => {
 
-    const [algorithm, setAlgorithm] = useState<string>("BubbleSort");
+    const [algorithm, setAlgorithm] = useState<string>("Bubble Sort");
     const [isModal, setIsModal] = useState<boolean>(false);
     const [quantity, setQuantity] = useState<number>(20);
     const [range, setRange] = useState<number>(20);
