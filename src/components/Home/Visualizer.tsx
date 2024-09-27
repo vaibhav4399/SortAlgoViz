@@ -10,13 +10,15 @@ import './Home.css';
 
 import BubbleSort from '../../Algorithms/BubbleSort';
 import InsetionSort from '../../Algorithms/InsertionSort';
+import SelectionSort from '../../Algorithms/SelectionSort';
 
 
 //** Object to map the Sorting Function name with the Algorithm Value  */
 
 const sortingAlgorithms: { [key: string]: ({array, setArray, setSelectedBar, setIsSorting}: ISortData) => Promise<void> } = {
     "Bubble Sort": BubbleSort,
-    "Insertion Sort": InsetionSort
+    "Insertion Sort": InsetionSort,
+    "Selection Sort": SelectionSort
 }
 
 /**
