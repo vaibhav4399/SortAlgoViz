@@ -9,12 +9,14 @@ import './Home.css';
 //** Importing the Algorithms */
 
 import BubbleSort from '../../Algorithms/BubbleSort';
+import InsetionSort from '../../Algorithms/InsertionSort';
 
 
 //** Object to map the Sorting Function name with the Algorithm Value  */
 
 const sortingAlgorithms: { [key: string]: ({array, setArray, setSelectedBar, setIsSorting}: ISortData) => Promise<void> } = {
-    "Bubble Sort": BubbleSort
+    "Bubble Sort": BubbleSort,
+    "Insertion Sort": InsetionSort
 }
 
 /**
@@ -80,7 +82,9 @@ const Visualizer = () => {
                             setAlgorithm("Bubble Sort");
                             BubbleSort({array, setArray, setSelectedBar, setIsSorting});
                         }
-                    }} >Start Sorting</button>
+                    }}
+                    aria-label='Sort Array' 
+                    >Start Sorting</button>
                 </div>
             </div>
     );
