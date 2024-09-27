@@ -63,7 +63,7 @@ const AlgorithmInput = () => {
                         <span className='absolute top-[40px] right-3'>Max</span>
                 </div>
                 <input onChange={(e) => handleQuantity(e, setQuantity)} className='misc-style quantity' type="text"  value={quantity} />
-                <button onClick={() => createArray(setArray, setBarWidth, setSelectedBar, quantity, range)} className=' misc-style' disabled={isSorting}>Generate</button>
+                <button aria-label='Generate Array' onClick={() => createArray(setArray, setBarWidth, setSelectedBar, quantity, range)} className=' misc-style' disabled={isSorting}>Generate</button>
             </div>
         </div>
     );
