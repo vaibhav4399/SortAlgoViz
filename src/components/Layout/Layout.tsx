@@ -1,13 +1,11 @@
 import { Outlet } from 'react-router-dom';
 import { createContext } from 'react';
 import { useState } from 'react';
-import { Bounce, ToastContainer } from 'react-toastify';
 import IDataContext from '../../interfaces/DataContext';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 import './Layout.css';
-import 'react-toastify/ReactToastify.min.css';
 
 /**
  * * Data Context for the data to be passed accross various components
@@ -24,8 +22,8 @@ const Layout = () => {
 
     const [algorithm, setAlgorithm] = useState<string>("Bubble Sort");
     const [isModal, setIsModal] = useState<boolean>(false);
-    const [quantity, setQuantity] = useState<number>(20);
-    const [range, setRange] = useState<number>(20);
+    const [quantity, setQuantity] = useState<number>(50);
+    const [range, setRange] = useState<number>(200);
     const [dark, setDark] = useState<boolean>(false);
 
     //** Context Data to be passed to various components */
@@ -48,13 +46,6 @@ const Layout = () => {
             <>
                 <Header />
                 <main>
-                    <ToastContainer
-                        newestOnTop={true}
-                        theme="colored"
-                        pauseOnHover
-                        transition={Bounce}
-                        draggable
-                    />
                     <Outlet />
                 </main>
                 <Footer />

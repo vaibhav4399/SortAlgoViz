@@ -24,7 +24,7 @@ export const handleResize = (setIsClicked: setState<boolean>, dark: boolean, set
  */
 
 export const handleRange = (e: React.ChangeEvent<HTMLInputElement>, setRange: setState<number>) => {
-    setRange ? setRange(Number(e.target.value)) : false;
+    setRange ? setRange(Number(e.target.value) > 200 ? 200 : Number(e.target.value)) : false;
 }
 
 /**
@@ -34,7 +34,17 @@ export const handleRange = (e: React.ChangeEvent<HTMLInputElement>, setRange: se
  */
 
 export const handleQuantity = (e: React.ChangeEvent<HTMLInputElement>, setQuantity:setState<number>) => {
-    setQuantity ? setQuantity(parseInt(e.target.value)) : false;
+    if(e.target.value === ''){
+        setQuantity(0);
+        return;
+    }
+    const value = parseInt(e.target.value, 10);
+    if(value >= 0 && value <= 50){
+        setQuantity(value)
+    }
+    else{
+        setQuantity(10)
+    }
 }
 
 /**
@@ -44,7 +54,7 @@ export const handleQuantity = (e: React.ChangeEvent<HTMLInputElement>, setQuanti
  */
 
 export const getSliderThumbPosition = (range: number): number => {
-    return 4 + ((range ?? 20 - 20) / (1000 - 20)) * 88; //** Expression for the effective range between 4 to 92 for considering padding issue */
+    return 1 + ((range ?? 20 - 20) / (200 - 20)) * 78; //** Expression for the effective range between 4 to 92 for considering padding issue */
 };
 
 /**
@@ -57,4 +67,47 @@ export const getSliderThumbPosition = (range: number): number => {
 export const handleAlgorithm = (algo: string, setAlgorithm:setState<string> , setIsModal: setState<boolean>) => {
     setAlgorithm(algo);
     setIsModal(false);
+}
+
+
+/**
+ * * Function to Create Random Array for the Visuzlizer
+ * @param setArray Function to set the Array
+ * @param setBarWidth Function to set the Bar Width
+ * @param setSelectedBar Function to track the selected Bar
+ * @param quantity Number of bars in the visualizer
+ * @param range Range of values to be generated
+ */
+
+export const createArray = (setArray: setState<number[]>, setBarWidth: setState<number>, setSelectedBar: setState<number[]>, quantity: number, range: number) => {
+    const a = Array.from({ length: quantity }, () => Math.floor(Math.random() * (range - 0 + 1)) + 0);
+    setArray(a);
+    calcBarWidth(setBarWidth, quantity)
+    setSelectedBar([]);
+}
+
+
+/**
+ * * Function to calculate the Width of the Bar
+ * @param setBarWidth Function to set the Bar Width
+ * @param quantity Number of Bars in the Visualizer
+ */
+
+export const calcBarWidth = (setBarWidth: setState<number>, quantity: number) => {
+    // const bW = Math.floor((window.innerWidth * 0.95) / quantity);
+    setBarWidth((window.innerWidth * 0.95) / quantity);
+}
+
+/**
+ * * Function to mark the completion of sorting
+ * @param array Array of values
+ * @param setSelectedBar Function to set the Selected Bar
+ */
+
+export const markSortComplete = (array: number[], setSelectedBar: setState<number[]>) => {
+    array.forEach((_ele, id) => {
+        setTimeout(() => {
+            setSelectedBar(prevSelected => [...prevSelected ?? [], id])
+        }, id * 100);
+    })
 }
