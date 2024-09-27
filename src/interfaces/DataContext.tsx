@@ -22,5 +22,26 @@ interface IDataContext {
     setDark: setState<boolean>
 }
 
+//** Inteface for the Home Context Data */
+
+export interface IHomeContext {
+    array: number[],
+    setArray: setState<number[]>,
+    isSorting: boolean,
+    setIsSorting: setState<boolean>,
+    barWidth: number,
+    setBarWidth: setState<number>,
+    selectedBar: number[],
+    setSelectedBar: setState<number[]>
+}
+
+//** Interface for the Sorting Function Data */
+
+export interface ISortData {
+    array: number[],
+    setArray: setState<number[]>,
+    setSelectedBar: setState<number[]>,
+    setIsSorting: setState<boolean>
+}
 
 export default IDataContext;

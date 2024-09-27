@@ -67,4 +67,21 @@
 
     /** Styles for visualizer Component */
 
+
+    .visual-container {
+        @apply mt-14 h-[500px];
+
+        .visual-bars {
+            @apply flex justify-evenly h-[500px] border-b-2 mx-auto items-end w-full overflow-x-auto;
+        }
+
+        .sort_btn {
+            @apply mt-5 w-full flex justify-center;
+
+            button {
+                @apply bg-green-300 mx-auto rounded-3xl py-3 px-12
+            }
+        }
+    }
+
 }

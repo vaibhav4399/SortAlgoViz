@@ -1,10 +1,11 @@
 import { useContext, useState } from 'react';
 import { dataContext } from '../Layout/Layout';
-import IDataContext from '../../interfaces/DataContext';
+import IDataContext, { IHomeContext } from '../../interfaces/DataContext';
 import {motion} from 'framer-motion';
-import { handleQuantity, handleRange, getSliderThumbPosition } from '../../hooks/useHandlers';
+import { handleQuantity, handleRange, getSliderThumbPosition, createArray } from '../../hooks/useHandlers';
 
 import './Home.css';
+import { homeContext } from './Home';
 
 /**
  * * Functional Component to handle the Input for the Algorithm
@@ -14,10 +15,11 @@ import './Home.css';
 const AlgorithmInput = () => {
 
     const context: IDataContext | null = useContext(dataContext);
+    const homeC: IHomeContext | null = useContext(homeContext);
 
     //** Do not load the component if the context data is not available */
 
-    if(!context){
+    if(!context || !homeC){
         return(
             <div>
                 <p>Could not load the component</p>
@@ -26,6 +28,7 @@ const AlgorithmInput = () => {
     }
 
     const {algorithm, range, setRange, quantity, setQuantity, setIsModal} = context
+    const {setArray, isSorting, setBarWidth, setSelectedBar} = homeC;
 
     const [isTooltip, setIsTooltip] = useState<boolean>(false);
 
@@ -55,12 +58,12 @@ const AlgorithmInput = () => {
                         onHoverEnd={() => setIsTooltip(false)}
                         onTouchStartCapture={() => setIsTooltip(true)}
                         onTouchEndCapture={() => setIsTooltip(false)}
-                        onChange={(e) => handleRange(e, setRange)} className='range' type="range" min="20" max="1000" value={range}  />
+                        onChange={(e) => handleRange(e, setRange)} className='range' type="range" min="20" max="200" value={range}  />
                         <span className='absolute top-[40px] left-3'>Min</span>
                         <span className='absolute top-[40px] right-3'>Max</span>
                 </div>
-                <input onChange={(e) => handleQuantity(e, setQuantity)} className='misc-style quantity' type="number" min="20" max="4000" value={quantity} />
-                <button className=' misc-style '>Generate</button>
+                <input onChange={(e) => handleQuantity(e, setQuantity)} className='misc-style quantity' type="text"  value={quantity} />
+                <button onClick={() => createArray(setArray, setBarWidth, setSelectedBar, quantity, range)} className=' misc-style' disabled={isSorting}>Generate</button>
             </div>
         </div>
     );
