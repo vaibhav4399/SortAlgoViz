@@ -4,7 +4,7 @@
     /** Styles for Input Component */
 
     .algorithminput {
-        @apply w-full h-fit dark:text-white;
+        @apply w-full h-fit;
 
         .outer {
             @apply flex flex-wrap justify-evenly items-center w-full px-4 h-full;
@@ -41,7 +41,7 @@
     /** Styles for Modal Component */
 
     .modal-bg {
-        @apply fixed inset-0 bg-black backdrop-blur-sm bg-opacity-20 z-20 justify-center items-center;
+        @apply fixed inset-0 bg-black backdrop-blur-sm bg-opacity-20 z-20 justify-center items-center text-black;
 
         .modal-body {
             @apply flex bg-white w-full sm:w-w70 h-4/6 rounded-2xl relative px-5;
@@ -69,17 +69,17 @@
 
 
     .visual-container {
-        @apply mt-14 h-[500px];
+        @apply mt-14 h-fit min-h-[700px];
 
         .visual-bars {
-            @apply flex justify-evenly h-[500px] border-b-2 mx-auto items-end w-full overflow-x-auto;
+            @apply flex justify-evenly h-fit min-h-[500px] border-b-2 mx-auto items-end w-full overflow-x-auto;
         }
 
         .sort_btn {
             @apply mt-5 w-full flex justify-center;
 
             button {
-                @apply bg-green-300 mx-auto rounded-3xl py-3 px-12
+                @apply bg-green-300 mx-auto rounded-3xl py-3 px-12 text-black
             }
         }
     }

@@ -5,7 +5,7 @@ header {
         @apply h-full w-w50 sm:w-w40 max-sm:relative flex sm:justify-center md:justify-start items-center p-2 sm:p-4;
 
         .hamburger {
-            @apply text-3xl w-w20 sm:hidden absolute left-4 cursor-pointer dark:text-white text-black;
+            @apply text-3xl w-w20 sm:hidden absolute left-4 cursor-pointer;
         }
 
         img {
@@ -15,7 +15,7 @@ header {
 
 
     nav {
-        @apply hidden sm:flex w-full sm:w-w40 sm:p-4 text-2xl font-semibold items-center dark:text-white text-black;
+        @apply hidden sm:flex w-full sm:w-w40 sm:p-4 text-2xl font-semibold items-center;
 
         .nav_list {
             @apply flex justify-end w-full sm:h-24;
