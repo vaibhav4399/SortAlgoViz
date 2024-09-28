@@ -13,20 +13,21 @@ const InsetionSort = async ({array, setArray, setSelectedBar, setIsSorting}: ISo
     setIsSorting(true);
     const arr = array;
 
-    for(let i = 1; i < arr.length; i++){
-        
-        for(let j = i - 1; j >= 0 && arr[j-1] > arr[j]; j--){
-            setSelectedBar(prevSelected => [...prevSelected ?? [], j]);
-            await new Promise((resolve) => setTimeout(resolve, 100));
-            setSelectedBar(prevSelected => [...prevSelected ?? [], j - 1]);
-            await new Promise((resolve) => setTimeout(resolve, 100));
-
-            let temp = arr[j];
-            arr[j] = arr[j-1];
-            arr[j-1] = temp;
-            setArray([...arr]);
-            await new Promise((resolve) => setTimeout(resolve, 100));
-            setSelectedBar([]);
+    for(let i = 1; i <= arr.length; i++){
+        for(let j = i; j > 0; j--){
+            if (arr[j - 1] > arr[j]){
+                setSelectedBar(prevSelected => [...prevSelected ?? [], j]);
+                await new Promise((resolve) => setTimeout(resolve, 100));
+                setSelectedBar(prevSelected => [...prevSelected ?? [], j - 1]);
+                await new Promise((resolve) => setTimeout(resolve, 100));
+    
+                let temp = arr[j];
+                arr[j] = arr[j-1];
+                arr[j-1] = temp;
+                setArray([...arr]);
+                await new Promise((resolve) => setTimeout(resolve, 100));
+                setSelectedBar([]);
+            }
         }
     }
 
