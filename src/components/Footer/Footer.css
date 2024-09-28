@@ -1,0 +1,7 @@
+.footer_container {
+    @apply w-full border-t-2 h-[50px] flex items-center justify-center;
+
+    .footer_section {
+        @apply text-center;
+    }
+}
