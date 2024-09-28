@@ -1,0 +1,25 @@
+.about_container {
+    @apply mt-12 px-5 flex justify-between text-black dark:text-white;
+
+    .about_section {
+        @apply flex flex-col text-center sm:text-left w-full md:w-w50 md:px-3;
+
+        .title {
+            @apply text-6xl font-semibold;
+        }
+
+        .info {
+            @apply mt-6 text-2xl;
+        }
+    }
+
+    .about_img {
+        @apply hidden md:flex justify-center items-center h-[500px] w-w50 px-3 ;
+
+        img {
+            @apply object-contain w-full h-full drop-shadow-[-35px_10px_25px_rgba(225,215,0,0.9)];
+
+            transform: rotateY(180deg);
+        }
+    }
+}
