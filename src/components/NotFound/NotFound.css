@@ -1,0 +1,27 @@
+.notfound_container {
+    @apply flex flex-col items-center px-2 h-screen;
+
+    .notfound_img {
+        @apply mt-24;
+
+        img {
+            @apply object-contain w-w80 mx-auto;
+        }
+    }
+
+    .notfound_section {
+        @apply w-full mt-8 text-center;
+
+        .notfound_title {
+            @apply text-4xl font-semibold;
+
+        }
+        p {
+            @apply text-2xl mt-2;
+
+            a {
+                @apply font-semibold underline underline-offset-4 decoration-2 decoration-wavy mx-2;
+            }
+        }
+    }
+}

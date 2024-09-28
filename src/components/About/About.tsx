@@ -18,7 +18,7 @@ const About = () => {
                 </p>
             </div>
             <div className='about_img'>
-                <img src={'/src/assets/images/avocado_about.webp'} />
+                <img alt="about_avacado"  src={'/src/assets/images/avocado_about.webp'} />
             </div>
         </div>
     )
