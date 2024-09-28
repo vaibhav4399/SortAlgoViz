@@ -5,7 +5,7 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { dataContext } from '../Layout/Layout';
 import IDataContext from '../../interfaces/DataContext';
 import { handleResize } from '../../hooks/useHandlers';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {AnimatePresence, motion} from 'framer-motion';
 import moonSvg from '../../assets/icons/icons8-moon-64.svg';
 import sunSvg from '../../assets/icons/icons8-sun.svg';
@@ -42,6 +42,7 @@ const Header = () => {
     const [logo, setLogo] = useState<string>(() => {
         return window.innerWidth > 639 ? (dark ? 'sav_long_white_logo.svg' : 'sav_long_black_logo.svg') : (dark ? 'sav_short_white_logo.svg' : 'sav_short_black_logo.svg')
     });
+    const navigate = useNavigate();
 
     //** UseEffect for handling the Header component on window resize */
 
@@ -72,7 +73,7 @@ const Header = () => {
                 <div onClick={() => setIsClicked(!isClicked)} className="hamburger">
                     <FontAwesomeIcon className="hamburger_icon" icon={isClicked? faXmark : faBars} />
                 </div>
-                <img className="logo_img" alt="logo" src={logo}  />
+                <img onClick={() => navigate('/')} className="logo_img" alt="logo" src={logo}  />
             </div>
 
             <AnimatePresence>

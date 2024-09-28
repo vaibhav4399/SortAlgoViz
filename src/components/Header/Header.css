@@ -9,7 +9,7 @@ header {
         }
 
         img {
-            @apply object-contain max-sm:absolute max-sm:left-16 w-[100px] sm:w-[300px];
+            @apply object-contain max-sm:absolute max-sm:left-16 w-[100px] sm:w-[300px] cursor-pointer;
         }
     }
 
